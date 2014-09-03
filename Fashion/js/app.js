@@ -27,9 +27,9 @@
 		// 缩略图部分
 		elThumbSwiperContainer.css({
 			'width' : innerWidth + 'px',
-			'height' : '75px',
+			'height' : '55px',
 			'position' : 'absolute',
-			'bottom' : 0
+			'bottom' : '10px'
 		});
 		
 	}
