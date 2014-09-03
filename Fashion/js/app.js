@@ -112,11 +112,14 @@
 		var self = $(this);
 		var imgUrl = self.attr('data-img');
 		
-
-		elFullImgBox.find('img').attr('src', imgUrl);
-		elFullImgBox.find('img').on('load', function(){
-			checkFullImgStyle();
+		checkFullImgStyle();
+		elFullImgBox.css({
+			'background-image' : 'url('+ imgUrl +')'
 		});
+		// elFullImgBox.find('img').attr('src', imgUrl);
+		// elFullImgBox.find('img').on('load', function(){
+		// 	checkFullImgStyle();
+		// });
 	});
 	// 关闭大图
 	elFullImgBox.find('.close').on('click', function(){
