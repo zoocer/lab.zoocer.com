@@ -93,27 +93,33 @@
 	});
 
 	var elFullMask = $('.full-mask');
-	var elFullImg = $('.full-img');
-	// 缩略图点击查看大图
-	elThumbSwiperContainer.find('[data-role="thumb-img"]').on('click', function(){
-		var self = $(this);
-		var imgUrl = self.attr('data-img');
+	var elFullImgBox = $('.full-img');
+	// 设置全屏大图定位
+	function checkFullImgStyle() {
 		var innerWidth = window.innerWidth;
 		var innerHeight = window.innerHeight;
-
-		elFullImg.find('img').attr('src', imgUrl);
-
-		var fullImgHeight = parseInt(elFullImg.css('height'), 10);
-		var fullImgWidth = parseInt(elFullImg.css('width'), 10);
-		elFullImg.css({
+		var fullImgHeight = parseInt(elFullImgBox.css('height'), 10);
+		var fullImgWidth = parseInt(elFullImgBox.css('width'), 10);
+		elFullImgBox.css({
 			'top' : (innerHeight/2) - (fullImgHeight/2) + 'px',
 			'left' : (innerWidth/2) - (fullImgWidth/2) + 'px'
 		});
 		elFullMask.show();
-		elFullImg.show();
+		elFullImgBox.show();
+	}
+	// 缩略图点击查看大图
+	elThumbSwiperContainer.find('[data-role="thumb-img"]').on('click', function(){
+		var self = $(this);
+		var imgUrl = self.attr('data-img');
+		
+
+		elFullImgBox.find('img').attr('src', imgUrl);
+		elFullImgBox.find('img').on('load', function(){
+			checkFullImgStyle();
+		});
 	});
 	// 关闭大图
-	elFullImg.find('.close').on('click', function(){
-		elFullImg.hide();
+	elFullImgBox.find('.close').on('click', function(){
+		elFullImgBox.hide();
 		elFullMask.hide();
 	});
