@@ -54,14 +54,17 @@
 			if(elLeftTag.length) {
 				for(var i=0; i<elLeftTag.length; i++) {
 					$(elLeftTag[i]).css({
-						'left': $(elLeftTag[i]).attr('data-pos') + 'px'
+						'left': $(elLeftTag[i]).attr('data-pos-x') + 'px',
+						'top': $(elLeftTag[i]).attr('data-pos-y') + 'px'
 					});
 				}
 			}
 			if(elRightTag.length) {
 				for(var j=0; j<elRightTag.length; j++) {
+					console.log($(elRightTag[j]).attr('data-pos-y'));
 					$(elRightTag[j]).css({
-						'right': $(elRightTag[j]).attr('data-pos') + 'px'
+						'right': $(elRightTag[j]).attr('data-pos-x') + 'px',
+						'top': $(elRightTag[j]).attr('data-pos-y') + 'px'
 					});
 				}
 			}
