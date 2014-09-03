@@ -98,12 +98,14 @@
 	function checkFullImgStyle() {
 		var innerWidth = window.innerWidth;
 		var innerHeight = window.innerHeight;
-		var fullImgHeight = parseInt(elFullImgBox.css('height'), 10);
-		var fullImgWidth = parseInt(elFullImgBox.css('width'), 10);
+		var fullImgHeight = elFullImgBox.height();
+		var fullImgWidth = elFullImgBox.width();
+
 		elFullImgBox.css({
 			'top' : (innerHeight/2) - (fullImgHeight/2) + 'px',
 			'left' : (innerWidth/2) - (fullImgWidth/2) + 'px'
 		});
+		console.log('checkFullImgStyle', innerWidth, fullImgWidth);
 		elFullMask.show();
 		elFullImgBox.show();
 	}
@@ -113,13 +115,16 @@
 		var imgUrl = self.attr('data-img');
 		
 		checkFullImgStyle();
-		elFullImgBox.css({
-			'background-image' : 'url('+ imgUrl +')'
-		});
-		// elFullImgBox.find('img').attr('src', imgUrl);
-		// elFullImgBox.find('img').on('load', function(){
-		// 	checkFullImgStyle();
+		// elFullImgBox.css({
+		// 	'background-image' : 'url('+ imgUrl +')'
 		// });
+
+		elFullImgBox.find('img').attr('src', imgUrl);
+		elFullImgBox.find('img').on('load', function(){
+			console.log(elFullImgBox.width());
+			elFullImgBox.css('background-image', 'none');
+			checkFullImgStyle();
+		});
 	});
 	// 关闭大图
 	elFullImgBox.find('.close').on('click', function(){

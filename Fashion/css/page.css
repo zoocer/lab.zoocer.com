@@ -87,16 +87,24 @@
 	position: absolute;
 	top: 0;
 	border: 1px solid #f00;
-	/*background-color: #fff;*/
-	min-height: 200px;
-	min-width: 200px;
+	max-width: 200px;
+	max-height: 287px;
 	z-index: 20;
 	background: url('../images/loadding.gif') no-repeat center center #fff;
-	
+	min-width: 100px;
+	min-height: 100px;
+}
+.full-img img{
+	max-width: 100%;
 }
 .full-img .close {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 15px;
+	top: 15px;
+	background: url('../images/icon-close.png') no-repeat center center transparent;
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
 }
 
