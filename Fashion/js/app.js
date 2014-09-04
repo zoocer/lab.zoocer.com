@@ -2,7 +2,12 @@
 	// 节点
 	var elSwiperContainer = $('#swiper-container');
 	var elThumbSwiperContainer = $('[data-role="thumb-swiper-container"]');
-	
+	// 选项
+	var OPTION = {
+		inner_widht : 320,
+		inner_height : 460
+	};
+
 	// 检查样式
 	function checkStyle(){
 		var innerHeight = window.innerHeight;
@@ -31,7 +36,6 @@
 			'position' : 'absolute',
 			'bottom' : '10px'
 		});
-		
 	}
 
 	checkStyle();
@@ -51,6 +55,18 @@
 			var elLeftTag = $(swiper.visibleSlides[0]).find('[data-role="left-tag"]');
 			var elRightTag = $(swiper.visibleSlides[0]).find('[data-role="right-tag"]');
 
+			var deltaX = 0;
+			var deltaY = 0;
+			if(window.innerWidth > OPTION.inner_widht) {
+				deltaX = ((window.innerWidth - OPTION.inner_widht)/2);
+			}
+			if(window.innerHeight > OPTION.inner_height) {
+				deltaY = ((window.innerHeight - OPTION.inner_height)/2);
+			}
+
+			// console.log('deltaX', deltaX, 'deltaY', deltaY);
+
+			// 左侧tag
 			if(elLeftTag.length) {
 				for(var i=0; i<elLeftTag.length; i++) {
 					$(elLeftTag[i]).css({
@@ -59,9 +75,9 @@
 					});
 				}
 			}
+			// 右侧tag
 			if(elRightTag.length) {
 				for(var j=0; j<elRightTag.length; j++) {
-					console.log($(elRightTag[j]).attr('data-pos-y'));
 					$(elRightTag[j]).css({
 						'right': $(elRightTag[j]).attr('data-pos-x') + 'px',
 						'top': $(elRightTag[j]).attr('data-pos-y') + 'px'
@@ -108,7 +124,7 @@
 			'top' : (innerHeight/2) - (fullImgHeight/2) + 'px',
 			'left' : (innerWidth/2) - (fullImgWidth/2) + 'px'
 		});
-		console.log('checkFullImgStyle', innerWidth, fullImgWidth);
+		
 		elFullMask.show();
 		elFullImgBox.show();
 	}
@@ -124,7 +140,6 @@
 
 		elFullImgBox.find('img').attr('src', imgUrl);
 		elFullImgBox.find('img').on('load', function(){
-			console.log(elFullImgBox.width());
 			elFullImgBox.css('background-image', 'none');
 			checkFullImgStyle();
 		});
