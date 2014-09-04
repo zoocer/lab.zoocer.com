@@ -62,7 +62,7 @@
 						// 'bottom': $(elFloatTag[0]).attr('data-pos-y') + 'px'
 					});
 				}
-			}, 300);
+			}, 500);
 		},
 		// slide动画执行完毕
 		// 设置浮动标签位置
