@@ -68,22 +68,12 @@
 	background-color: #000;
 	opacity: 0.6;
 }
-.thumb-swiper-container .swiper-slide {
-	/*padding: 0 10px;*/
-}
 .thumb-swiper-container .thumb-img {
 	padding: 0 5px;
 }
 .thumb-swiper-container .thumb-img img {
 	max-width: 100%;
 }
-/*.full-img-mask {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-	background-color: #000;
-}*/
 .full-mask {
 	display: none;
 	position: absolute;
@@ -120,21 +110,52 @@
 	display: inline-block;
 }
 
-/*往期页*/
-.wangqi-wrap {
+/*通用*/
+.common-page-wrap {
 	margin: 0 15px;
 	padding: 15px 0;
 }
-.wangqi-wrap .logo {
+.common-page-wrap .logo {
 	background: url('../images/logo.png') no-repeat center center;
 	width: 100%;
 	height: 80px;
 	background-size: contain;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+.text-center {
+	text-align: center;
+}
+.p-text-1 {
+	color: #e8402d;
+}
+.p-text-2 {
+	color: #818081;
+}
+.cut-line {
+	height: 2px;
+	width: 100%;
+	background-color: #e8402d;
+}
+.btn {
+	padding: 6px 10px;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+}
+.btn-share {
+	background-color: #e8402d;
+	width: 100px;
+}
+
+/*往期页*/
+.wangqi-wrap .cut-line {
+	margin-bottom: 10px;
 }
 .wangqi-wrap .cover {
 	height: 120px;
-	/*border-bottom: 2px solid #e8402d;*/
 	border: 1px solid #000;
 	overflow: hidden;
 }
@@ -146,4 +167,10 @@
 }
 
 /*分享页*/
+.share-wrap .qr {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
 
