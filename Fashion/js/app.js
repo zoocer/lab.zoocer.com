@@ -52,14 +52,17 @@
 		// 全部初始化完毕
 		onInit : function(swiper) {
 			$('.swiper-container').css('visibility', 'visible');
+
 			// 首页标签框
-			var elFloatTag = $(swiper.visibleSlides[0]).find('[data-role="float-tag-index"]');
-			if(elFloatTag.length) {
-				$(elFloatTag[0]).css({
-					'right': $(elFloatTag[0]).attr('data-pos-x') + 'px',
-					'bottom': $(elFloatTag[0]).attr('data-pos-y') + 'px'
-				});
-			}
+			setTimeout(function(){
+				var elFloatTag = $(swiper.visibleSlides[0]).find('[data-role="float-tag-index"]');
+				if(elFloatTag.length) {
+					$(elFloatTag[0]).css({
+						'right': $(elFloatTag[0]).attr('data-pos-x') + 'px'
+						// 'bottom': $(elFloatTag[0]).attr('data-pos-y') + 'px'
+					});
+				}
+			}, 300);
 		},
 		// slide动画执行完毕
 		// 设置浮动标签位置
