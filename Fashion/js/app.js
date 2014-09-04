@@ -5,7 +5,8 @@
 	// 选项
 	var OPTION = {
 		inner_widht : 320,
-		inner_height : 460
+		inner_height : 460,
+		duration : 600
 	};
 
 	// 检查样式
@@ -32,7 +33,7 @@
 		// 缩略图部分
 		elThumbSwiperContainer.css({
 			'width' : innerWidth + 'px',
-			'height' : '55px',
+			'height' : (innerWidth/4 - 10) + 'px',
 			'position' : 'absolute',
 			'bottom' : '10px'
 		});
@@ -47,6 +48,7 @@
 		// 全部初始化完毕
 		onInit : function(swiper) {
 			console.log('onInit', swiper);
+			$('.swiper-container').css('visibility', 'visible');
 		},
 		// slide动画执行完毕
 		// 设置浮动标签位置
@@ -63,27 +65,83 @@
 			if(window.innerHeight > OPTION.inner_height) {
 				deltaY = ((window.innerHeight - OPTION.inner_height)/2);
 			}
-
 			// console.log('deltaX', deltaX, 'deltaY', deltaY);
 
-			// 左侧tag
-			if(elLeftTag.length) {
-				for(var i=0; i<elLeftTag.length; i++) {
-					$(elLeftTag[i]).css({
-						'left': $(elLeftTag[i]).attr('data-pos-x') + 'px',
-						'top': $(elLeftTag[i]).attr('data-pos-y') + 'px'
+			// 浮动tag
+			var elFloatTag = $(swiper.visibleSlides[0]).find('[data-role="float-tag"]');
+			var tagIndex = 1;
+			if(elFloatTag.length) {
+				// 第一个标签立即定位
+				if($(elFloatTag[0]).attr('data-type') === 'right') {
+					$(elFloatTag[0]).css({
+						'right': $(elFloatTag[0]).attr('data-pos-x') + 'px',
+						'top': $(elFloatTag[0]).attr('data-pos-y') + 'px'
+					});
+				}else {
+					$(elFloatTag[0]).css({
+						'left': $(elFloatTag[0]).attr('data-pos-x') + 'px',
+						'top': $(elFloatTag[0]).attr('data-pos-y') + 'px'
 					});
 				}
+				// 从第二个标签开始，延迟定位
+				var tagInterval = setInterval(function(){
+					if($(elFloatTag[tagIndex]).attr('data-type') === 'right') {
+						$(elFloatTag[tagIndex]).css({
+							'right': $(elFloatTag[tagIndex]).attr('data-pos-x') + 'px',
+							'top': $(elFloatTag[tagIndex]).attr('data-pos-y') + 'px'
+						});
+					}else {
+						$(elFloatTag[tagIndex]).css({
+							'left': $(elFloatTag[tagIndex]).attr('data-pos-x') + 'px',
+							'top': $(elFloatTag[tagIndex]).attr('data-pos-y') + 'px'
+						});
+					}
+					tagIndex++;
+					if(tagIndex >= elFloatTag.length) {
+						clearInterval(tagInterval);
+						tagInterval = null;
+					}
+				}, OPTION.duration);
 			}
-			// 右侧tag
-			if(elRightTag.length) {
-				for(var j=0; j<elRightTag.length; j++) {
-					$(elRightTag[j]).css({
-						'right': $(elRightTag[j]).attr('data-pos-x') + 'px',
-						'top': $(elRightTag[j]).attr('data-pos-y') + 'px'
-					});
-				}
-			}
+
+			// // 左侧tag
+			// if(elLeftTag.length) {
+			// 	$(elLeftTag[0]).css({
+			// 		'left': $(elLeftTag[0]).attr('data-pos-x') + 'px',
+			// 		'top': $(elLeftTag[0]).attr('data-pos-y') + 'px'
+			// 	});
+			// 	var indexL = 1;
+			// 	var intervalL = setInterval(function(){
+			// 		$(elLeftTag[indexL]).css({
+			// 			'left': $(elLeftTag[indexL]).attr('data-pos-x') + 'px',
+			// 			'top': $(elLeftTag[indexL]).attr('data-pos-y') + 'px'
+			// 		});
+			// 		indexL++;
+			// 		if(indexL >= elLeftTag.length) {
+			// 			clearInterval(intervalL);
+			// 			intervalL = null;
+			// 		}
+			// 	}, OPTION.duration);
+			// }
+			// // 右侧tag
+			// if(elRightTag.length) {
+			// 	$(elRightTag[0]).css({
+			// 		'right': $(elRightTag[0]).attr('data-pos-x') + 'px',
+			// 		'top': $(elRightTag[0]).attr('data-pos-y') + 'px'
+			// 	});
+			// 	var indexR = 1;
+			// 	var intervalR = setInterval(function(){
+			// 		$(elRightTag[indexR]).css({
+			// 			'right': $(elRightTag[indexR]).attr('data-pos-x') + 'px',
+			// 			'top': $(elRightTag[indexR]).attr('data-pos-y') + 'px'
+			// 		});
+			// 		indexR++;
+			// 		if(indexR >= elRightTag.length) {
+			// 			clearInterval(intervalR);
+			// 			intervalR = null;
+			// 		}
+			// 	}, OPTION.duration);
+			// }
 		},
 		// slide动画开始执行时
 		// 移除浮动标签到屏幕外
@@ -94,12 +152,12 @@
 			var elNextBox = $(elSwiperContainer.find('[data-role="slide-box"]')[curIndex+1]);
 
 			if(elPrevBox.length) {
-				elPrevBox.find('[data-role="left-tag"]').css('left', '');
-				elPrevBox.find('[data-role="right-tag"]').css('right', '');
+				elPrevBox.find('[data-role="float-tag"][data-type="left"]').css('left', '');
+				elPrevBox.find('[data-role="float-tag"][data-type="right"]').css('right', '');
 			}
 			if(elNextBox.length) {
-				elNextBox.find('[data-role="left-tag"]').css('left', '');
-				elNextBox.find('[data-role="right-tag"]').css('right', '');
+				elNextBox.find('[data-role="float-tag"][data-type="left"]').css('left', '');
+				elNextBox.find('[data-role="float-tag"][data-type="right"]').css('right', '');
 			}
 		}
 	});
@@ -134,9 +192,6 @@
 		var imgUrl = self.attr('data-img');
 		
 		checkFullImgStyle();
-		// elFullImgBox.css({
-		// 	'background-image' : 'url('+ imgUrl +')'
-		// });
 
 		elFullImgBox.find('img').attr('src', imgUrl);
 		elFullImgBox.find('img').on('load', function(){
