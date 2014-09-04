@@ -59,20 +59,6 @@
 	right: -200px;
 }
 
-/*浮动标题*/
-/*.p-ft.p-ft-1-1 {
-	top: 120px;
-}
-.p-ft.p-ft-1-2 {
-	top: 165px;
-}
-.p-ft.p-ft-1-3 {
-	top: 180px;
-}
-.p-ft.p-ft-1-4 {
-	top: 420px;
-}*/
-
 /*缩略图*/
 .thumb-swiper-mask  {
 	position: absolute;
@@ -133,4 +119,31 @@
 	height: 30px;
 	display: inline-block;
 }
+
+/*往期页*/
+.wangqi-wrap {
+	margin: 0 15px;
+	padding: 15px 0;
+}
+.wangqi-wrap .logo {
+	background: url('../images/logo.png') no-repeat center center;
+	width: 100%;
+	height: 80px;
+	background-size: contain;
+	margin-bottom: 20px;
+}
+.wangqi-wrap .cover {
+	height: 120px;
+	/*border-bottom: 2px solid #e8402d;*/
+	border: 1px solid #000;
+	overflow: hidden;
+}
+.wangqi-wrap .cover img {
+	width: 100%;
+}
+.wangqi-wrap .cover-title {
+	color: #e8402d;
+}
+
+/*分享页*/
 
