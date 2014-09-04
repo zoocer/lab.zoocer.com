@@ -28,7 +28,7 @@
 	padding: 10px 12px;
 	color: #fff;
 	background-color: #000;
-	opacity: 0.8;
+	/*opacity: 0.8;*/
 	border-radius: 4px;
 	vertical-align: middle;
 }
@@ -41,20 +41,21 @@
 	vertical-align: middle;
 }
 .p-ft .arrow-left,
-.p-ft .arrow-right {
-	background: url('../images/icon-arrow-left.png') no-repeat;
+.p-ft .arrow-right {	
 	width: 8px;
 	height: 16px;
 	display: inline-block;
 	vertical-align: middle;
-	opacity: 0.8;
+	/*opacity: 0.8;*/
 }
 .p-ft .arrow-left {
 	margin-left: 5px;
+	background: url('../images/icon-arrow-left.png') no-repeat center center transparent;
 }
 .p-ft .arrow-right {
 	margin-right: 5px;
-	transform : rotate(180deg);
+	background: url('../images/icon-arrow-right.png') no-repeat center center transparent;
+	margin-left: -1px;
 }
 .p-ft-left {
 	left: -200px;
@@ -68,7 +69,7 @@
 	background-size: cover;
 	width: 200px;
 	height: 140px;
-	bottom: 60px;
+	bottom: 100px;
 }
 
 /*缩略图*/
@@ -159,6 +160,19 @@
 .btn-share {
 	background-color: #e8402d;
 	width: 100px;
+}
+.bottom-mask {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 135px;
+	background: url('../images/back-mask.png') repeat-x;
+}
+.icon-down {
+	background: url('../images/icon-down.png') no-repeat center center transparent;
+	width: 83px;
+	height: 95px;
+	margin: 40px auto 0 auto;
 }
 
 /*往期页*/
