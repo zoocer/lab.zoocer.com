@@ -124,8 +124,9 @@
 
 /*通用*/
 .common-page-wrap {
-	margin: 0 15px;
+	margin: 0 auto;
 	padding: 15px 0;
+	max-width: 260px;
 }
 .common-page-wrap .logo {
 	background: url('../images/logo.png') no-repeat center center;
@@ -139,6 +140,8 @@
 }
 .p-text-1 {
 	color: #e8402d;
+	font-size: 20px;
+	margin: 10px 0;
 }
 .p-text-2 {
 	color: #818081;
@@ -149,7 +152,7 @@
 	background-color: #e8402d;
 }
 .btn {
-	padding: 6px 10px;
+	padding: 10px 10px;
 	border-radius: 4px;
 	font-size: 16px;
 	font-weight: bold;
@@ -159,7 +162,8 @@
 }
 .btn-share {
 	background-color: #e8402d;
-	width: 100px;
+	font-size: 24px;
+	width: 200px;
 }
 .bottom-mask {
 	position: absolute;
@@ -197,5 +201,9 @@
 	height: 200px;
 	overflow: hidden;
 	margin: 0 auto;
+	border: 1px solid #ed6942;
+}
+.share-wrap .qr img {
+	width: 100%;
 }
 
