@@ -218,3 +218,8 @@
 		elFullImgBox.hide();
 		elFullMask.hide();
 	});
+
+	// test
+	$('[data-role="btn-share"]').on('click', function(){
+		window.location.reload();
+	});
