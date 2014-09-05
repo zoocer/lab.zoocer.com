@@ -31,6 +31,16 @@
 			});
 		}
 
+		// 设置浮动标签top位置
+		var elFloatTag = $('[data-role="float-tag"]');
+		if(elFloatTag.length) {
+			$.each(elFloatTag, function(key) {
+				$(elFloatTag[key]).css({
+					'top' : $(elFloatTag[key]).attr('data-pos-y') + 'px'
+				});
+			});
+		}
+
 		// 缩略图部分
 		elThumbSwiperContainer.css({
 			'width' : innerWidth + 'px',
@@ -59,7 +69,6 @@
 				if(elFloatTag.length) {
 					$(elFloatTag[0]).css({
 						'right': $(elFloatTag[0]).attr('data-pos-x') + 'px'
-						// 'bottom': $(elFloatTag[0]).attr('data-pos-y') + 'px'
 					});
 				}
 			}, 500);

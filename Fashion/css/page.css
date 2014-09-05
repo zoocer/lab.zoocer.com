@@ -145,6 +145,7 @@
 }
 .p-text-2 {
 	color: #818081;
+	margin: 0;
 }
 .cut-line {
 	height: 2px;
@@ -202,6 +203,7 @@
 	overflow: hidden;
 	margin: 0 auto;
 	border: 1px solid #ed6942;
+	margin-bottom: 15px;
 }
 .share-wrap .qr img {
 	width: 100%;
