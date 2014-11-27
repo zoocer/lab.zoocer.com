@@ -1,0 +1,27 @@
+/*!
+ * @fileoverview 项目通用样式文件
+ * @authors yifei (yifei@zoocer.com)
+ */
+
+/*
+ * 布局
+ */
+body {
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*
+ * 通用
+ */
+.bg-slide {
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #E24D5B, #EA343D);
+	/* Safari 4-5, Chrome 1-9 */
+	/* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+	background: -webkit-gradient(linear,top,from(#E24D5B),to(#EA343D));
+	/* Safari 5.1+, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #E24D5B, #EA343D);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #E24D5B, #EA343D);
+	position: relative;
+}

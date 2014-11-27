@@ -1,0 +1,174 @@
+/*
+ * 顶部导航
+ */
+.zc-navbar {
+	position: relative;
+	min-height: 50px;
+	padding: 15px 0;
+	background-color: #2a71dd;
+}
+.zc-navbar-head {
+	float: left;
+	margin-right: 15px;
+}
+.zc-navbar-head .icon-down {
+	display: inline-block;
+	width: 12px;
+	height: 7px;
+	background: url(../../images/navbar/icon-dropdown.png) no-repeat center;
+	cursor: pointer;
+}
+.zc-navbar-head .line-vt {
+	display: inline-block;
+	width: 1px;
+	height: 40px;
+	background-color: #fff;
+	vertical-align: middle;
+	margin-left: 25px;
+}
+.zc-navbar-brand {
+	margin-right: 10px;
+}
+.zc-navbar-brand .text {
+	vertical-align: middle;
+	color: #fff;
+}
+.zc-navbar-collapse {
+	/*overflow: hidden;*/
+}
+.zc-navbar-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.zc-navbar-nav .item {
+	float: left;
+	margin: 0 10px;
+}
+.zc-navbar-nav .item,
+.zc-navbar-nav .dropdown {
+	float: left;
+	position: relative;
+}
+.zc-navbar-nav .item .link,
+.zc-navbar-nav .item .link:hover,
+.zc-navbar-nav .item .link:focus {
+	display: block;
+	color: #fff;
+}
+.icon-dropdown {
+	display: inline-block;
+	background: url(../../images/navbar/icon-dropdown2.png) no-repeat center;
+	width: 7px;
+	height: 4px;
+	vertical-align: middle;
+}
+.dropdown-menu {
+	/*float: left;*/
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	width: 100px;
+	padding: 0;
+	margin: 5px 0 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #b5b5b5;
+}
+.dropdown .dropdown-toggle,
+.dropdown .dropdown-toggle:hover {
+	color: #fff;
+	/*float: right;*/
+}
+.dropdown .dropdown-menu li {
+	height: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.dropdown .dropdown-menu li a {
+	display: block;
+	padding: 10px 20px;
+	font-size: 12px;
+	color: #333;
+	white-space: nowrap;
+	border-bottom: 1px solid #b5b5b5;
+}
+.dropdown .dropdown-menu li.last a{
+	border-bottom: none;
+}
+.dropdown .dropdown-menu li a:hover {
+	background-color: #ddd;
+}
+.zc-navbar-right .dropdown-menu {
+	right: 0;
+	left: auto;
+}
+.zc-navbar-abs {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: transparent;
+}
+.zc-navbar-left {
+	float: left;
+}
+.zc-navbar-right {
+	float: right;
+}
+/*theme*/
+.zc-navbar-default {
+	background-color: #2a71dd;
+}
+.zc-navbar-default .zc-navbar-brand .icon {
+	display: inline-block;
+	width: 65px;
+	height: 55px;
+	background: url(../../images/navbar/logo-nav.png) no-repeat center;
+	vertical-align: middle;
+}
+.zc-navbar-default .zc-navbar-nav {
+	padding-top: 15px;
+}
+.zc-navbar-default .zc-navbar-nav .item .link {
+	color: #fff;
+	padding: 0 15px 5px 15px;
+}
+.zc-navbar-default .zc-navbar-nav .item .link.active,
+.zc-navbar-default .zc-navbar-nav .item .link:hover {
+	border-bottom: 2px solid #fff;
+}
+.zc-navbar-default .zc-navbar-form {
+	padding-top: 8px;
+}
+.zc-navbar-default .zc-navbar-form .form-group {
+	float: left;
+	margin-right: 3px;
+}
+.zc-navbar-default .zc-navbar-form .form-group input {
+	width: 75px;
+	height: 22px;
+	font-size: 12px;
+	padding: 0;
+}
+.zc-navbar-default .zc-navbar-form .link {
+	font-size: 12px;
+	color: #fff;
+}
+.zc-navbar-default .zc-navbar-form .btn-signin {
+	color: #fff;
+	border: 0;
+	font-size: 12px;
+	line-height: 12px;
+	background: url(../../images/navbar/btn-signin.jpg) no-repeat center;
+	height: 22px;
+	padding: 0 10px;
+}
+.zc-navbar-default .zc-navbar-form .btn-signin:hover {
+	background-image: url(../../images/navbar/btn-signin-hover.jpg);
+}

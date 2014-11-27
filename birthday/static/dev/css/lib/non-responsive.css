@@ -1,0 +1,11 @@
+/*禁止响应式布局*/
+
+/* Account for fixed navbar */
+body {
+	min-width: 970px;
+}
+
+/* Reset the container */
+.container {
+	width: 970px !important;
+}

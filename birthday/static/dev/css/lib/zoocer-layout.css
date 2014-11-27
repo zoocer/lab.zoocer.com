@@ -1,0 +1,18 @@
+/*
+ * 布局
+ */
+body {
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #333333;
+}
+html, body {
+	height: 100%;
+}
+.zc-layout-wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/*给底部footer留出空间*/
+	margin: 0 auto -55px;
+}

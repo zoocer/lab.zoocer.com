@@ -1,0 +1,92 @@
+/*
+ * 排版
+ */
+.col-nopadding {
+	padding: 0;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.zc-p-nomargin {
+	margin: 0;
+}
+.zc-txt-s1 {
+	font-size: 16px;
+}
+.zc-txt-s2 {
+	font-size: 18px;
+}
+.zc-txt-s3 {
+	font-size: 20px;
+}
+.zc-txt-c1 {
+	color: #3d3d3d;
+}
+.zc-txt-c2 {
+	color: #fff;
+}
+.zc-txt-lh1 {
+	line-height: 1.5;
+}
+.zc-txt-lh2 {
+	line-height: 2;
+}
+.zc-txt-lh3 {
+	line-height: 2.5;
+}
+.zc-clearfix {
+	clear: both;
+	overflow: hidden;
+}
+/*描述列表*/
+.zc-dl-horizontal dt {
+	float: left;
+	width: 160px;
+	overflow: hidden;
+	clear: left;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.zc-dl-horizontal dd {
+	margin-left: 170px;
+}
+.zc-dl-horizontal dd:before,
+.zc-dl-horizontal dd:after {
+	display: table;
+	content: " ";
+}
+.zc-dl-horizontal dd:after {
+	clear: both;
+}
+.zc-dl-horizontal dd:before,
+.zc-dl-horizontal dd:after {
+	display: table;
+	content: " ";
+}
+.zc-dl-horizontal dd:after {
+	clear: both;
+}
+/*页头*/
+.zc-page-header {
+	border-bottom: 1px dotted #8b8b8b;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.zc-page-header .title {
+	font-size: 20px;
+	color: #2a71dd;
+	margin: 0;
+}

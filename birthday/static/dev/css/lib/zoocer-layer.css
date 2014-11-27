@@ -1,0 +1,72 @@
+/*
+ * 通用layer浮层
+ */
+/*tips浮层*/
+.layer-tips {
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.layer-tips .content {
+	padding: 24px 35px;
+	background-color: #fffcf6;
+	border-radius: 5px;
+}
+.layer-tips .content .text {
+	font-size: 20px;
+	color: #666;
+	vertical-align: middle;
+}
+.layer-tips .content .icon-tips {
+	width: 47px;
+	height: 47px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 30px;
+}
+.layer-tips .content .icon-tips.error {
+	background: url(../../images/layer/icon-tips-error.png) no-repeat transparent;
+}
+.layer-tips .content .icon-tips.success {
+	background: url(../../images/layer/icon-tips-success.png) no-repeat transparent;
+}
+/*page对话框*/
+.layer-page {
+	margin: 30px auto;
+}
+.layer-page .layer-content {
+	position: relative;
+	background-color: #fff;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+.layer-page .layer-header {
+	height: auto;
+	padding: 15px;
+}
+.layer-page .layer-header .layer-close {
+	float: right;
+	background: url(../../images/layer/icon-close.png) no-repeat transparent;
+	width: 17px;
+	height: 17px;
+	font-size: 12px;
+}
+.layer-page .layer-header .layer-close:hover {
+	background-position: -20px 0;
+}
+.layer-page .layer-header .layer-title {
+	margin: 0;
+	text-align: left;
+	font-size: 14px;
+}
+.layer-page .layer-body {
+	position: relative;
+	font-size: 14px;
+}
+.layer-page .layer-footer {
+	padding: 19px 20px 20px;
+	text-align: right;
+}
+.layer-page .layer-footer .btn-row {
+	text-align: center;
+}

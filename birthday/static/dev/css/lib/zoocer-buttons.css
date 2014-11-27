@@ -1,0 +1,86 @@
+/*
+ * 按钮
+ */
+.zc-btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+}
+.zc-btn:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.zc-btn:hover,
+.zc-btn:focus {
+	color: #333333;
+	text-decoration: none;
+}
+.zc-btn:active,
+.zc-btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+			box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.zc-btn.disabled,
+.zc-btn[disabled],
+fieldset[disabled] .zc-btn {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+			box-shadow: none;
+}
+/*theme*/
+.zc-btn-default {
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+.zc-btn-default:hover,
+.zc-btn-default:focus,
+.zc-btn-default:active,
+.zc-btn-default.active {
+	color: #333333;
+	background-color: #ebebeb;
+	border-color: #adadad;
+}
+.zc-btn-default:active,
+.zc-btn-default.active {
+	background-image: none;
+}
+.zc-btn-default.disabled,
+.zc-btn-default[disabled],
+fieldset[disabled] .zc-btn-default,
+.zc-btn-default.disabled:hover,
+.zc-btn-default[disabled]:hover,
+fieldset[disabled] .zc-btn-default:hover,
+.zc-btn-default.disabled:focus,
+.zc-btn-default[disabled]:focus,
+fieldset[disabled] .zc-btn-default:focus,
+.zc-btn-default.disabled:active,
+.zc-btn-default[disabled]:active,
+fieldset[disabled] .zc-btn-default:active,
+.zc-btn-default.disabled.active,
+.zc-btn-default[disabled].active,
+fieldset[disabled] .zc-btn-default.active {
+	background-color: #ffffff;
+	border-color: #cccccc;
+}

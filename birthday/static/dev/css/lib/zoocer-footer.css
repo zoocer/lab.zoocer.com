@@ -1,0 +1,30 @@
+/*
+ * 页脚
+ */
+.zc-footer {
+	width: 100%;
+	background-color: #ccc;
+}
+.zc-footer .container {
+	color: #999;
+	min-height: 50px;
+}
+.zc-footer-fixed {
+	position: absolute;
+	bottom: 0;
+}
+/*theme*/
+.zc-footer-default {
+	background-color: #f2f2f2;
+}
+.zc-footer-default .container {
+	color: #999;
+	font-size: 12px;
+	height: 55px;
+}
+.zc-footer-push {
+	height: 55px;
+}
+.zc-footer-default .container .p1 {
+	margin: 10px 0 5px 0;
+}
